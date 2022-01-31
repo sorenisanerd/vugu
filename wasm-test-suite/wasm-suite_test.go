@@ -11,6 +11,8 @@ import (
 	"testing"
 	"time"
 
+	"github.com/chromedp/chromedp/kb"
+
 	"github.com/chromedp/cdproto/cdp"
 	"github.com/chromedp/chromedp"
 	"github.com/chromedp/chromedp/kb"
@@ -71,7 +73,8 @@ func Test001Simple(t *testing.T) {
 	}
 
 	t.Run("go", func(t *testing.T) { tf(t, mustGenBuildAndLoad(dir)) })
-	t.Run("tinygo", func(t *testing.T) { tf(t, mustTGGenBuildAndLoad(dir, nil)) })
+	t.Run("tinygo", func(t *testing.T) { tf(t, mustTGGenBuildAndLoad(dir, false)) })
+	t.Run("tinygo", func(t *testing.T) { tf(t, mustTGGenBuildAndLoad(dir, true)) })
 
 }
 
@@ -104,7 +107,8 @@ func Test002Click(t *testing.T) {
 	}
 
 	t.Run("go", func(t *testing.T) { tf(t, mustGenBuildAndLoad(dir)) })
-	t.Run("tinygo", func(t *testing.T) { tf(t, mustTGGenBuildAndLoad(dir, nil)) })
+	t.Run("tinygo", func(t *testing.T) { tf(t, mustTGGenBuildAndLoad(dir, false)) })
+	t.Run("tinygo", func(t *testing.T) { tf(t, mustTGGenBuildAndLoad(dir, true)) })
 
 }
 
@@ -132,7 +136,8 @@ func Test003Prop(t *testing.T) {
 	}
 
 	t.Run("go", func(t *testing.T) { tf(t, mustGenBuildAndLoad(dir)) })
-	t.Run("tinygo", func(t *testing.T) { tf(t, mustTGGenBuildAndLoad(dir, nil)) })
+	t.Run("tinygo", func(t *testing.T) { tf(t, mustTGGenBuildAndLoad(dir, false)) })
+	t.Run("tinygo", func(t *testing.T) { tf(t, mustTGGenBuildAndLoad(dir, true)) })
 
 }
 
@@ -158,7 +163,8 @@ func Test004Component(t *testing.T) {
 	}
 
 	t.Run("go", func(t *testing.T) { tf(t, mustGenBuildAndLoad(dir)) })
-	t.Run("tinygo", func(t *testing.T) { tf(t, mustTGGenBuildAndLoad(dir, nil)) })
+	t.Run("tinygo", func(t *testing.T) { tf(t, mustTGGenBuildAndLoad(dir, false)) })
+	t.Run("tinygo", func(t *testing.T) { tf(t, mustTGGenBuildAndLoad(dir, true)) })
 
 }
 
@@ -182,7 +188,8 @@ func Test005Issue80(t *testing.T) {
 	}
 
 	t.Run("go", func(t *testing.T) { tf(t, mustGenBuildAndLoad(dir)) })
-	t.Run("tinygo", func(t *testing.T) { tf(t, mustTGGenBuildAndLoad(dir, nil)) })
+	t.Run("tinygo", func(t *testing.T) { tf(t, mustTGGenBuildAndLoad(dir, false)) })
+	t.Run("tinygo", func(t *testing.T) { tf(t, mustTGGenBuildAndLoad(dir, true)) })
 
 }
 
@@ -229,7 +236,8 @@ func Test006Issue81(t *testing.T) {
 	}
 
 	t.Run("go", func(t *testing.T) { tf(t, mustGenBuildAndLoad(dir)) })
-	t.Run("tinygo", func(t *testing.T) { tf(t, mustTGGenBuildAndLoad(dir, nil)) })
+	t.Run("tinygo", func(t *testing.T) { tf(t, mustTGGenBuildAndLoad(dir, false)) })
+	t.Run("tinygo", func(t *testing.T) { tf(t, mustTGGenBuildAndLoad(dir, true)) })
 
 }
 
@@ -250,7 +258,8 @@ func Test007Issue85(t *testing.T) {
 	}
 
 	t.Run("go", func(t *testing.T) { tf(t, mustGenBuildAndLoad(dir)) })
-	t.Run("tinygo", func(t *testing.T) { tf(t, mustTGGenBuildAndLoad(dir, nil)) })
+	t.Run("tinygo", func(t *testing.T) { tf(t, mustTGGenBuildAndLoad(dir, false)) })
+	t.Run("tinygo", func(t *testing.T) { tf(t, mustTGGenBuildAndLoad(dir, true)) })
 
 }
 
@@ -312,7 +321,8 @@ func Test008For(t *testing.T) {
 			}
 
 			t.Run("go", func(t *testing.T) { tf(t, mustGenBuildAndLoad(dir)) })
-			t.Run("tinygo", func(t *testing.T) { tf(t, mustTGGenBuildAndLoad(dir, nil)) })
+			t.Run("tinygo", func(t *testing.T) { tf(t, mustTGGenBuildAndLoad(dir, false)) })
+			t.Run("tinygo", func(t *testing.T) { tf(t, mustTGGenBuildAndLoad(dir, true)) })
 
 		})
 	}
@@ -345,7 +355,8 @@ func Test009TrimUnused(t *testing.T) {
 	}
 
 	t.Run("go", func(t *testing.T) { tf(t, mustGenBuildAndLoad(dir)) })
-	t.Run("tinygo", func(t *testing.T) { tf(t, mustTGGenBuildAndLoad(dir, nil)) })
+	t.Run("tinygo", func(t *testing.T) { tf(t, mustTGGenBuildAndLoad(dir, false)) })
+	t.Run("tinygo", func(t *testing.T) { tf(t, mustTGGenBuildAndLoad(dir, true)) })
 
 }
 
@@ -377,7 +388,8 @@ func Test010ListenerReadd(t *testing.T) {
 	}
 
 	t.Run("go", func(t *testing.T) { tf(t, mustGenBuildAndLoad(dir)) })
-	t.Run("tinygo", func(t *testing.T) { tf(t, mustTGGenBuildAndLoad(dir, nil)) })
+	t.Run("tinygo", func(t *testing.T) { tf(t, mustTGGenBuildAndLoad(dir, false)) })
+	t.Run("tinygo", func(t *testing.T) { tf(t, mustTGGenBuildAndLoad(dir, true)) })
 
 }
 
@@ -402,7 +414,8 @@ func Test011Wire(t *testing.T) {
 	}
 
 	t.Run("go", func(t *testing.T) { tf(t, mustGenBuildAndLoad(dir)) })
-	t.Run("tinygo", func(t *testing.T) { tf(t, mustTGGenBuildAndLoad(dir, nil)) })
+	t.Run("tinygo", func(t *testing.T) { tf(t, mustTGGenBuildAndLoad(dir, false)) })
+	t.Run("tinygo", func(t *testing.T) { tf(t, mustTGGenBuildAndLoad(dir, true)) })
 
 }
 
@@ -461,10 +474,8 @@ func Test012Router(t *testing.T) {
 	}
 
 	t.Run("go", func(t *testing.T) { tf(t, mustGenBuildAndLoad(dir)) })
-	// FIXME: tinygo is failing with: /usr/local/go/src/encoding/asn1/asn1.go
-	// Need to track down the import
-	// t.Run("tinygo", func(t *testing.T) { tf(t, mustTGGenBuildAndLoad(dir, []string{"github.com/vugu/vgrouter"})) })
-
+	t.Run("tinygo", func(t *testing.T) { tf(t, mustTGGenBuildAndLoad(dir, false)) })
+	t.Run("tinygo", func(t *testing.T) { tf(t, mustTGGenBuildAndLoad(dir, true)) })
 }
 
 func Test013Issue117(t *testing.T) {
@@ -490,10 +501,8 @@ func Test013Issue117(t *testing.T) {
 	}
 
 	t.Run("go", func(t *testing.T) { tf(t, mustGenBuildAndLoad(dir)) })
-	// FIXME: tinygo is failing with: /usr/local/go/src/encoding/asn1/asn1.go
-	// Need to track down the import
-	// t.Run("tinygo", func(t *testing.T) { tf(t, mustTGGenBuildAndLoad(dir, []string{"github.com/vugu/vgrouter"})) })
-
+	t.Run("tinygo", func(t *testing.T) { tf(t, mustTGGenBuildAndLoad(dir, false)) })
+	t.Run("tinygo", func(t *testing.T) { tf(t, mustTGGenBuildAndLoad(dir, true)) })
 }
 
 func Test014AttrIntf(t *testing.T) {
@@ -543,7 +552,8 @@ func Test014AttrIntf(t *testing.T) {
 	}
 
 	t.Run("go", func(t *testing.T) { tf(t, mustGenBuildAndLoad(dir)) })
-	t.Run("tinygo", func(t *testing.T) { tf(t, mustTGGenBuildAndLoad(dir, nil)) })
+	t.Run("tinygo", func(t *testing.T) { tf(t, mustTGGenBuildAndLoad(dir, false)) })
+	t.Run("tinygo", func(t *testing.T) { tf(t, mustTGGenBuildAndLoad(dir, true)) })
 
 }
 
@@ -590,7 +600,8 @@ func Test015AttrList(t *testing.T) {
 	}
 
 	t.Run("go", func(t *testing.T) { tf(t, mustGenBuildAndLoad(dir)) })
-	t.Run("tinygo", func(t *testing.T) { tf(t, mustTGGenBuildAndLoad(dir, nil)) })
+	t.Run("tinygo", func(t *testing.T) { tf(t, mustTGGenBuildAndLoad(dir, false)) })
+	t.Run("tinygo", func(t *testing.T) { tf(t, mustTGGenBuildAndLoad(dir, true)) })
 
 }
 
@@ -620,7 +631,8 @@ func Test016SVG(t *testing.T) {
 	}
 
 	t.Run("go", func(t *testing.T) { tf(t, mustGenBuildAndLoad(dir)) })
-	t.Run("tinygo", func(t *testing.T) { tf(t, mustTGGenBuildAndLoad(dir, nil)) })
+	t.Run("tinygo", func(t *testing.T) { tf(t, mustTGGenBuildAndLoad(dir, false)) })
+	t.Run("tinygo", func(t *testing.T) { tf(t, mustTGGenBuildAndLoad(dir, true)) })
 
 }
 
@@ -663,7 +675,8 @@ func Test017Nesting(t *testing.T) {
 	}
 
 	t.Run("go", func(t *testing.T) { tf(t, mustGenBuildAndLoad(dir)) })
-	t.Run("tinygo", func(t *testing.T) { tf(t, mustTGGenBuildAndLoad(dir, nil)) })
+	t.Run("tinygo", func(t *testing.T) { tf(t, mustTGGenBuildAndLoad(dir, false)) })
+	t.Run("tinygo", func(t *testing.T) { tf(t, mustTGGenBuildAndLoad(dir, true)) })
 
 }
 
@@ -696,7 +709,8 @@ func Test018CompEvents(t *testing.T) {
 	}
 
 	t.Run("go", func(t *testing.T) { tf(t, mustGenBuildAndLoad(dir)) })
-	t.Run("tinygo", func(t *testing.T) { tf(t, mustTGGenBuildAndLoad(dir, nil)) })
+	t.Run("tinygo", func(t *testing.T) { tf(t, mustTGGenBuildAndLoad(dir, false)) })
+	t.Run("tinygo", func(t *testing.T) { tf(t, mustTGGenBuildAndLoad(dir, true)) })
 
 }
 
@@ -745,7 +759,7 @@ func Test019JSCreatePopulate(t *testing.T) {
 	}
 
 	t.Run("go", func(t *testing.T) { tf(t, mustGenBuildAndLoad(dir)) })
-	// FIXME: this fails in the UI with: syscall/js.finalizeRef not implemented; panic: JavaScript error: unreachable;
+	// FIXME: this fails with tinygo 0.22.0 in the UI with: syscall/js.finalizeRef not implemented; panic: JavaScript error: unreachable;
 	// t.Run("tinygo", func(t *testing.T) { tf(t, mustTGGenBuildAndLoad(dir, nil)) })
 
 }
@@ -772,9 +786,8 @@ func Test020VGForm(t *testing.T) {
 	}
 
 	t.Run("go", func(t *testing.T) { tf(t, mustGenBuildAndLoad(dir)) })
-	// FIXME: tinygo panics with: panic: trying to make exported function async: (github.com/vugu/vugu/vgform.TextMapperFunc).TextMap$invoke
-	// t.Run("tinygo", func(t *testing.T) { tf(t, mustTGGenBuildAndLoad(dir, nil)) })
-
+	t.Run("tinygo", func(t *testing.T) { tf(t, mustTGGenBuildAndLoad(dir, false)) })
+	t.Run("tinygo", func(t *testing.T) { tf(t, mustTGGenBuildAndLoad(dir, true)) })
 }
 
 func Test021Slots(t *testing.T) {
@@ -811,7 +824,8 @@ func Test021Slots(t *testing.T) {
 	}
 
 	t.Run("go", func(t *testing.T) { tf(t, mustGenBuildAndLoad(dir)) })
-	t.Run("tinygo", func(t *testing.T) { tf(t, mustTGGenBuildAndLoad(dir, nil)) })
+	t.Run("tinygo", func(t *testing.T) { tf(t, mustTGGenBuildAndLoad(dir, false)) })
+	t.Run("tinygo", func(t *testing.T) { tf(t, mustTGGenBuildAndLoad(dir, true)) })
 
 }
 
@@ -848,7 +862,8 @@ func Test022EventListener(t *testing.T) {
 	}
 
 	t.Run("go", func(t *testing.T) { tf(t, mustGenBuildAndLoad(dir)) })
-	t.Run("tinygo", func(t *testing.T) { tf(t, mustTGGenBuildAndLoad(dir, nil)) })
+	t.Run("tinygo", func(t *testing.T) { tf(t, mustTGGenBuildAndLoad(dir, false)) })
+	t.Run("tinygo", func(t *testing.T) { tf(t, mustTGGenBuildAndLoad(dir, true)) })
 
 }
 
@@ -906,9 +921,8 @@ got C2.Rendered()
 	}
 
 	t.Run("go", func(t *testing.T) { tf(t, mustGenBuildAndLoad(dir)) })
-	// FIXME: once tinygo module stuff is sorted out try this again
-	// t.Run("tinygo", func(t *testing.T) { tf(t, mustTGGenBuildAndLoad(dir, nil)) })
-
+	t.Run("tinygo", func(t *testing.T) { tf(t, mustTGGenBuildAndLoad(dir, false)) })
+	t.Run("tinygo", func(t *testing.T) { tf(t, mustTGGenBuildAndLoad(dir, true)) })
 }
 
 func Test024EventBufferSize(t *testing.T) {
@@ -932,6 +946,8 @@ func Test024EventBufferSize(t *testing.T) {
 		log.Println(val)
 	}
 	t.Run("go", func(t *testing.T) { tf(t, mustGenBuildAndLoad(dir)) })
+	t.Run("go", func(t *testing.T) { tf(t, mustTGGenBuildAndLoad(dir, true)) })
+	t.Run("go", func(t *testing.T) { tf(t, mustTGGenBuildAndLoad(dir, false)) })
 }
 
 func Test025JSValueOf(t *testing.T) {
