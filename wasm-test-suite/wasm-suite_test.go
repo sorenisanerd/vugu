@@ -11,8 +11,6 @@ import (
 	"testing"
 	"time"
 
-	"github.com/chromedp/chromedp/kb"
-
 	"github.com/chromedp/cdproto/cdp"
 	"github.com/chromedp/chromedp"
 	"github.com/chromedp/chromedp/kb"
