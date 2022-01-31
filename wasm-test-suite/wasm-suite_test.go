@@ -976,6 +976,6 @@ func Test025JSValueOf(t *testing.T) {
 	}
 
 	t.Run("go", func(t *testing.T) { tf(t, mustGenBuildAndLoad(dir)) })
-	t.Run("tinygo", func(t *testing.T) { tf(t, mustTGGenBuildAndLoad(dir, nil)) })
-
+	t.Run("tinygo", func(t *testing.T) { tf(t, mustTGGenBuildAndLoad(dir, true)) })
+	t.Run("tinygo", func(t *testing.T) { tf(t, mustTGGenBuildAndLoad(dir, false)) })
 }
